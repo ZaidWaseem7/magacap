@@ -280,7 +280,7 @@ function App() {
               onClick={() => handleActivateMoveable("cap4")}
               style={{
                 width: "200px",
-                height: "140px",
+                height: "160px",
                 position: "absolute",
                 right: 0,
                 bottom: 50,
