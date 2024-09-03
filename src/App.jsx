@@ -18,7 +18,11 @@ function App() {
   const [image, setImage] = useState(null);
   const [buttonLabel, setButtonLabel] = useState("Upload Image");
   const [activeTarget, setActiveTarget] = useState(null);
-  const [selectedHat, setSelectedHat] = useState(null);
+  const [selectedHat, setSelectedHat] = useState({
+    cap1to4: null,
+    cap5: false,
+    cap6: false,
+  });
   const moveableRef = useRef(null);
   const containerRef = useRef(null);
   const targetRefs = {
@@ -122,7 +126,15 @@ function App() {
   };
 
   const handleActivatecap = (key) => {
-    setSelectedHat(key);
+    if (["hat1", "hat2", "hat3", "hat4"].includes(key)) {
+      setSelectedHat((prevState) => ({ ...prevState, cap1to4: key }));
+    } else {
+      setSelectedHat((prevState) => ({ ...prevState, [key]: !prevState[key] }));
+    }
+  };
+
+  const handleCloseCap = (key) => {
+    setSelectedHat((prevState) => ({ ...prevState, [key]: false }));
   };
 
   return (
@@ -137,8 +149,7 @@ function App() {
           <span className="magaa">$MAGA</span>
           <span className="magaa2">MAKE AMERICA GREAT AGAIN</span>
         </div>
-        {/* <img src={trump} alt="" style={{width:"10%", height:"10%"}} /> */}
-        <span className="selecthat">Select hat</span>
+        <span className="selecthat">Select</span>
         <div className="hatboxes">
           <div className="hat1">
             <img
@@ -181,7 +192,7 @@ function App() {
               src={cap5}
               alt="cap5"
               style={{ width: "90%", height: "95%" }}
-              onClick={() => handleActivatecap("hat5")}
+              onClick={() => handleActivatecap("cap5")}
             />
           </div>
           <div className="hat4">
@@ -189,7 +200,7 @@ function App() {
               src={cap6}
               alt="cap6"
               style={{ width: "90%", height: "95%" }}
-              onClick={() => handleActivatecap("hat6")}
+              onClick={() => handleActivatecap("cap6")}
             />
           </div>
         </div>
@@ -211,7 +222,7 @@ function App() {
                 <img src={image} alt="Uploaded Preview" className="imagecccc" />
               </>
             )}
-            {selectedHat === "hat1" && (
+            {selectedHat.cap1to4 === "hat1" && (
               <div
                 ref={targetRefs.cap}
                 className={`child-container ${
@@ -234,7 +245,7 @@ function App() {
                 />
               </div>
             )}
-            {selectedHat === "hat2" && (
+            {selectedHat.cap1to4 === "hat2" && (
               <div
                 ref={targetRefs.cap1}
                 className={`child-container ${
@@ -257,7 +268,7 @@ function App() {
                 />
               </div>
             )}
-            {selectedHat === "hat3" && (
+            {selectedHat.cap1to4 === "hat3" && (
               <div
                 ref={targetRefs.cap3}
                 className={`child-container ${
@@ -280,7 +291,7 @@ function App() {
                 />
               </div>
             )}
-            {selectedHat === "hat4" && (
+            {selectedHat.cap1to4 === "hat4" && (
               <div
                 ref={targetRefs.cap4}
                 className={`child-container ${
@@ -303,7 +314,7 @@ function App() {
                 />
               </div>
             )}
-            {selectedHat === "hat5" && (
+            {selectedHat.cap5 && (
               <div
                 ref={targetRefs.cap5}
                 className={`child-container ${
@@ -311,11 +322,11 @@ function App() {
                 }`}
                 onClick={() => handleActivateMoveable("cap5")}
                 style={{
-                  width: "220px",
+                  width: "200px",
                   height: "120px",
                   position: "absolute",
-                  left: 0,
-                  bottom: 50,
+                  left: 7,
+                  bottom: -60,
                 }}
               >
                 <img
@@ -324,9 +335,14 @@ function App() {
                   style={{ width: "100%", height: "100%" }}
                   className="imageeee"
                 />
+                <IoCloseCircleSharp
+                  className="close-button"
+                  size={20}
+                  onClick={() => handleCloseCap("cap5")}
+                />
               </div>
             )}
-            {selectedHat === "hat6" && (
+            {selectedHat.cap6 && (
               <div
                 ref={targetRefs.cap6}
                 className={`child-container ${
@@ -334,11 +350,11 @@ function App() {
                 }`}
                 onClick={() => handleActivateMoveable("cap6")}
                 style={{
-                  width: "220px",
+                  width: "200px",
                   height: "120px",
                   position: "absolute",
-                  right: 0,
-                  bottom: 50,
+                  right: 7,
+                  bottom: -10,
                 }}
               >
                 <img
@@ -346,6 +362,11 @@ function App() {
                   alt="cap6"
                   style={{ width: "100%", height: "100%" }}
                   className="imageeee"
+                />
+                <IoCloseCircleSharp
+                  className="close-button"
+                  size={20}
+                  onClick={() => handleCloseCap("cap6")}
                 />
               </div>
             )}
