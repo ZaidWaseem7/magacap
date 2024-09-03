@@ -3,8 +3,10 @@ import "./App.css";
 import { IoCloseCircleSharp } from "react-icons/io5";
 import cap from "./assets/cap.png";
 import cap1 from "./assets/cap1.png";
-import cap3 from "./assets/WhatsApp Image 2024-09-01 at 20.11.14_dfc27534 2.png";
-import cap4 from "./assets/WhatsApp Image 2024-09-01 at 20.11.18_f559c184.jpg";
+import cap3 from "./assets/MAGA HAT FNAL.png";
+import cap4 from "./assets/PngItem_1077178 (1) 1.png";
+import cap5 from "./assets/WhatsApp Image 2024-09-01 at 20.11.14_dfc27534 2.png";
+import cap6 from "./assets/WhatsApp Image 2024-09-01 at 20.11.18_f559c184.jpg";
 import Moveable from "moveable";
 import html2canvas from "html2canvas";
 import { FaXTwitter } from "react-icons/fa6";
@@ -23,6 +25,8 @@ function App() {
     cap1: useRef(null),
     cap3: useRef(null),
     cap4: useRef(null),
+    cap5: useRef(null),
+    cap6: useRef(null),
   };
 
   useEffect(() => {
@@ -151,7 +155,7 @@ function App() {
           <img
             src={cap3}
             alt="cap3"
-            style={{ width: "90%", height: "95%" }}
+            style={{ width: "80%", height: "100%" }}
             onClick={() => handleActivatecap("hat3")}
           />
         </div>
@@ -161,6 +165,24 @@ function App() {
             alt="cap4"
             style={{ width: "90%", height: "95%" }}
             onClick={() => handleActivatecap("hat4")}
+          />
+        </div>
+      </div>
+      <div className="hatboxes">
+        <div className="hat3">
+          <img
+            src={cap5}
+            alt="cap5"
+            style={{ width: "90%", height: "95%" }}
+            onClick={() => handleActivatecap("hat5")}
+          />
+        </div>
+        <div className="hat4">
+          <img
+            src={cap6}
+            alt="cap6"
+            style={{ width: "90%", height: "95%" }}
+            onClick={() => handleActivatecap("hat6")}
           />
         </div>
       </div>
@@ -257,8 +279,8 @@ function App() {
               }`}
               onClick={() => handleActivateMoveable("cap4")}
               style={{
-                width: "220px",
-                height: "120px",
+                width: "240px",
+                height: "140px",
                 position: "absolute",
                 right: 0,
                 bottom: 50,
@@ -267,6 +289,52 @@ function App() {
               <img
                 src={cap4}
                 alt="cap4"
+                style={{ width: "100%", height: "100%" }}
+                className="imageeee"
+              />
+            </div>
+          )}
+          {selectedHat === "hat5" && (
+            <div
+              ref={targetRefs.cap5}
+              className={`child-container ${
+                activeTarget === "cap5" ? "active" : ""
+              }`}
+              onClick={() => handleActivateMoveable("cap5")}
+              style={{
+                width: "220px",
+                height: "120px",
+                position: "absolute",
+                left: 0,
+                bottom: 50,
+              }}
+            >
+              <img
+                src={cap5}
+                alt="cap5"
+                style={{ width: "100%", height: "100%" }}
+                className="imageeee"
+              />
+            </div>
+          )}
+          {selectedHat === "hat6" && (
+            <div
+              ref={targetRefs.cap6}
+              className={`child-container ${
+                activeTarget === "cap6" ? "active" : ""
+              }`}
+              onClick={() => handleActivateMoveable("cap6")}
+              style={{
+                width: "220px",
+                height: "120px",
+                position: "absolute",
+                right: 0,
+                bottom: 50,
+              }}
+            >
+              <img
+                src={cap6}
+                alt="cap6"
                 style={{ width: "100%", height: "100%" }}
                 className="imageeee"
               />
