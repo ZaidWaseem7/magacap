@@ -3,8 +3,8 @@ import "./App.css";
 import { IoCloseCircleSharp } from "react-icons/io5";
 import cap from "./assets/cap.png";
 import cap1 from "./assets/cap1.png";
-import cap3 from "./assets/MAGA HAT FNAL.png";
-import cap4 from "./assets/PngItem_1077178 (1) 1.png";
+import cap3 from "./assets/PngItem_1077178 (1) 1.png";
+import cap4 from "./assets/MAGA HAT FNAL.png";
 import cap5 from "./assets/WhatsApp Image 2024-09-01 at 20.11.14_dfc27534 2.png";
 import cap6 from "./assets/WhatsApp Image 2024-09-01 at 20.11.18_f559c184.jpg";
 import Moveable from "moveable";
@@ -155,7 +155,7 @@ function App() {
           <img
             src={cap3}
             alt="cap3"
-            style={{ width: "80%", height: "100%" }}
+            style={{ width: "90%", height: "98%" }}
             onClick={() => handleActivatecap("hat3")}
           />
         </div>
@@ -163,7 +163,7 @@ function App() {
           <img
             src={cap4}
             alt="cap4"
-            style={{ width: "90%", height: "95%" }}
+            style={{ width: "100%", height: "150%" }}
             onClick={() => handleActivatecap("hat4")}
           />
         </div>
@@ -256,8 +256,8 @@ function App() {
               }`}
               onClick={() => handleActivateMoveable("cap3")}
               style={{
-                width: "220px",
-                height: "120px",
+                width: "240px",
+                height: "140px",
                 position: "absolute",
                 left: 0,
                 bottom: 50,
@@ -279,7 +279,7 @@ function App() {
               }`}
               onClick={() => handleActivateMoveable("cap4")}
               style={{
-                width: "240px",
+                width: "200px",
                 height: "140px",
                 position: "absolute",
                 right: 0,
