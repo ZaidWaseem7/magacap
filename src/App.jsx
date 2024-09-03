@@ -7,6 +7,7 @@ import cap3 from "./assets/PngItem_1077178 (1) 1.png";
 import cap4 from "./assets/MAGA HAT FNAL.png";
 import cap5 from "./assets/WhatsApp Image 2024-09-01 at 20.11.14_dfc27534 2.png";
 import cap6 from "./assets/WhatsApp Image 2024-09-01 at 20.11.18_f559c184.jpg";
+import video from "./assets/flag.mp4";
 import Moveable from "moveable";
 import html2canvas from "html2canvas";
 import { FaXTwitter } from "react-icons/fa6";
@@ -125,253 +126,263 @@ function App() {
   };
 
   return (
-    <div className={`card ${image ? "image-uploaded" : ""}`} id="page1">
-      <div className="headings">
-        <span className="magaa">$MAGA</span>
-        <span className="magaa2">MAKE AMERICA GREAT AGAIN</span>
-      </div>
-      {/* <img src={trump} alt="" style={{width:"10%", height:"10%"}} /> */}
-      <span className="selecthat">Select hat</span>
-      <div className="hatboxes">
-        <div className="hat1">
-          <img
-            src={cap}
-            alt="cap"
-            style={{ width: "70%", height: "98%" }}
-            onClick={() => handleActivatecap("hat1")}
-          />
+    <div className="app-container">
+      <video className="background-video" autoPlay muted loop>
+        <source src={video} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div className="blue-overlay"></div>
+      <div className={`card ${image ? "image-uploaded" : ""}`} id="page1">
+        <div className="headings">
+          <span className="magaa">$MAGA</span>
+          <span className="magaa2">MAKE AMERICA GREAT AGAIN</span>
         </div>
-        <div className="hat2">
-          <img
-            src={cap1}
-            alt="cap1"
-            style={{ width: "70%", height: "98%" }}
-            onClick={() => handleActivatecap("hat2")}
-          />
-        </div>
-      </div>
-      <div className="hatboxes">
-        <div className="hat3">
-          <img
-            src={cap3}
-            alt="cap3"
-            style={{ width: "90%", height: "98%" }}
-            onClick={() => handleActivatecap("hat3")}
-          />
-        </div>
-        <div className="hat4">
-          <img
-            src={cap4}
-            alt="cap4"
-            style={{ width: "100%", height: "150%" }}
-            onClick={() => handleActivatecap("hat4")}
-          />
-        </div>
-      </div>
-      <div className="hatboxes">
-        <div className="hat3">
-          <img
-            src={cap5}
-            alt="cap5"
-            style={{ width: "90%", height: "95%" }}
-            onClick={() => handleActivatecap("hat5")}
-          />
-        </div>
-        <div className="hat4">
-          <img
-            src={cap6}
-            alt="cap6"
-            style={{ width: "90%", height: "95%" }}
-            onClick={() => handleActivatecap("hat6")}
-          />
-        </div>
-      </div>
-      <div
-        className={`input ${!image ? "placeholder-border" : "image-uploaded"}`}
-      >
-        <div
-          className="moveable-container"
-          ref={containerRef}
-          style={{ position: "relative" }}
-        >
-          {image && (
-            <>
-              <div onClick={handleRemoveImage} className="close-icon">
-                <IoCloseCircleSharp size={40} className="close" />
-              </div>
-              <img src={image} alt="Uploaded Preview" className="imagecccc" />
-            </>
-          )}
-          {selectedHat === "hat1" && (
-            <div
-              ref={targetRefs.cap}
-              className={`child-container ${
-                activeTarget === "cap" ? "active" : ""
-              }`}
-              onClick={() => handleActivateMoveable("cap")}
-              style={{
-                width: "120px",
-                height: "120px",
-                position: "absolute",
-                left: 0,
-                bottom: 50,
-              }}
-            >
-              <img
-                src={cap}
-                alt="cap"
-                style={{ width: "100%", height: "100%" }}
-                className="imageeee"
-              />
-            </div>
-          )}
-          {selectedHat === "hat2" && (
-            <div
-              ref={targetRefs.cap1}
-              className={`child-container ${
-                activeTarget === "cap1" ? "active" : ""
-              }`}
-              onClick={() => handleActivateMoveable("cap1")}
-              style={{
-                width: "120px",
-                height: "120px",
-                position: "absolute",
-                right: 0,
-                bottom: 50,
-              }}
-            >
-              <img
-                src={cap1}
-                alt="cap1"
-                style={{ width: "100%", height: "100%" }}
-                className="imageeee"
-              />
-            </div>
-          )}
-          {selectedHat === "hat3" && (
-            <div
-              ref={targetRefs.cap3}
-              className={`child-container ${
-                activeTarget === "cap3" ? "active" : ""
-              }`}
-              onClick={() => handleActivateMoveable("cap3")}
-              style={{
-                width: "240px",
-                height: "140px",
-                position: "absolute",
-                left: 0,
-                bottom: 50,
-              }}
-            >
-              <img
-                src={cap3}
-                alt="cap3"
-                style={{ width: "100%", height: "100%" }}
-                className="imageeee"
-              />
-            </div>
-          )}
-          {selectedHat === "hat4" && (
-            <div
-              ref={targetRefs.cap4}
-              className={`child-container ${
-                activeTarget === "cap4" ? "active" : ""
-              }`}
-              onClick={() => handleActivateMoveable("cap4")}
-              style={{
-                width: "200px",
-                height: "160px",
-                position: "absolute",
-                right: 0,
-                bottom: 50,
-              }}
-            >
-              <img
-                src={cap4}
-                alt="cap4"
-                style={{ width: "100%", height: "100%" }}
-                className="imageeee"
-              />
-            </div>
-          )}
-          {selectedHat === "hat5" && (
-            <div
-              ref={targetRefs.cap5}
-              className={`child-container ${
-                activeTarget === "cap5" ? "active" : ""
-              }`}
-              onClick={() => handleActivateMoveable("cap5")}
-              style={{
-                width: "220px",
-                height: "120px",
-                position: "absolute",
-                left: 0,
-                bottom: 50,
-              }}
-            >
-              <img
-                src={cap5}
-                alt="cap5"
-                style={{ width: "100%", height: "100%" }}
-                className="imageeee"
-              />
-            </div>
-          )}
-          {selectedHat === "hat6" && (
-            <div
-              ref={targetRefs.cap6}
-              className={`child-container ${
-                activeTarget === "cap6" ? "active" : ""
-              }`}
-              onClick={() => handleActivateMoveable("cap6")}
-              style={{
-                width: "220px",
-                height: "120px",
-                position: "absolute",
-                right: 0,
-                bottom: 50,
-              }}
-            >
-              <img
-                src={cap6}
-                alt="cap6"
-                style={{ width: "100%", height: "100%" }}
-                className="imageeee"
-              />
-            </div>
-          )}
-        </div>
-      </div>
-      <div className="btncrd">
-        {buttonLabel === "Upload Image" ? (
-          <label className="img">
-            {buttonLabel}
-            <input
-              type="file"
-              accept="image/*"
-              onChange={handleImageUpload}
-              style={{ display: "none" }}
+        {/* <img src={trump} alt="" style={{width:"10%", height:"10%"}} /> */}
+        <span className="selecthat">Select hat</span>
+        <div className="hatboxes">
+          <div className="hat1">
+            <img
+              src={cap}
+              alt="cap"
+              style={{ width: "70%", height: "98%" }}
+              onClick={() => handleActivatecap("hat1")}
             />
-          </label>
-        ) : (
-          <button onClick={handleSaveImage} className="img">
-            {buttonLabel}
-          </button>
-        )}
-      </div>
+          </div>
+          <div className="hat2">
+            <img
+              src={cap1}
+              alt="cap1"
+              style={{ width: "70%", height: "98%" }}
+              onClick={() => handleActivatecap("hat2")}
+            />
+          </div>
+        </div>
+        <div className="hatboxes">
+          <div className="hat3">
+            <img
+              src={cap3}
+              alt="cap3"
+              style={{ width: "90%", height: "98%" }}
+              onClick={() => handleActivatecap("hat3")}
+            />
+          </div>
+          <div className="hat4">
+            <img
+              src={cap4}
+              alt="cap4"
+              style={{ width: "100%", height: "150%" }}
+              onClick={() => handleActivatecap("hat4")}
+            />
+          </div>
+        </div>
+        <div className="hatboxes">
+          <div className="hat3">
+            <img
+              src={cap5}
+              alt="cap5"
+              style={{ width: "90%", height: "95%" }}
+              onClick={() => handleActivatecap("hat5")}
+            />
+          </div>
+          <div className="hat4">
+            <img
+              src={cap6}
+              alt="cap6"
+              style={{ width: "90%", height: "95%" }}
+              onClick={() => handleActivatecap("hat6")}
+            />
+          </div>
+        </div>
+        <div
+          className={`input ${
+            !image ? "placeholder-border" : "image-uploaded"
+          }`}
+        >
+          <div
+            className="moveable-container"
+            ref={containerRef}
+            style={{ position: "relative" }}
+          >
+            {image && (
+              <>
+                <div onClick={handleRemoveImage} className="close-icon">
+                  <IoCloseCircleSharp size={40} className="close" />
+                </div>
+                <img src={image} alt="Uploaded Preview" className="imagecccc" />
+              </>
+            )}
+            {selectedHat === "hat1" && (
+              <div
+                ref={targetRefs.cap}
+                className={`child-container ${
+                  activeTarget === "cap" ? "active" : ""
+                }`}
+                onClick={() => handleActivateMoveable("cap")}
+                style={{
+                  width: "120px",
+                  height: "120px",
+                  position: "absolute",
+                  left: 0,
+                  bottom: 50,
+                }}
+              >
+                <img
+                  src={cap}
+                  alt="cap"
+                  style={{ width: "100%", height: "100%" }}
+                  className="imageeee"
+                />
+              </div>
+            )}
+            {selectedHat === "hat2" && (
+              <div
+                ref={targetRefs.cap1}
+                className={`child-container ${
+                  activeTarget === "cap1" ? "active" : ""
+                }`}
+                onClick={() => handleActivateMoveable("cap1")}
+                style={{
+                  width: "120px",
+                  height: "120px",
+                  position: "absolute",
+                  right: 0,
+                  bottom: 50,
+                }}
+              >
+                <img
+                  src={cap1}
+                  alt="cap1"
+                  style={{ width: "100%", height: "100%" }}
+                  className="imageeee"
+                />
+              </div>
+            )}
+            {selectedHat === "hat3" && (
+              <div
+                ref={targetRefs.cap3}
+                className={`child-container ${
+                  activeTarget === "cap3" ? "active" : ""
+                }`}
+                onClick={() => handleActivateMoveable("cap3")}
+                style={{
+                  width: "240px",
+                  height: "140px",
+                  position: "absolute",
+                  left: 0,
+                  bottom: 50,
+                }}
+              >
+                <img
+                  src={cap3}
+                  alt="cap3"
+                  style={{ width: "100%", height: "100%" }}
+                  className="imageeee"
+                />
+              </div>
+            )}
+            {selectedHat === "hat4" && (
+              <div
+                ref={targetRefs.cap4}
+                className={`child-container ${
+                  activeTarget === "cap4" ? "active" : ""
+                }`}
+                onClick={() => handleActivateMoveable("cap4")}
+                style={{
+                  width: "200px",
+                  height: "160px",
+                  position: "absolute",
+                  right: 0,
+                  bottom: 50,
+                }}
+              >
+                <img
+                  src={cap4}
+                  alt="cap4"
+                  style={{ width: "100%", height: "100%" }}
+                  className="imageeee"
+                />
+              </div>
+            )}
+            {selectedHat === "hat5" && (
+              <div
+                ref={targetRefs.cap5}
+                className={`child-container ${
+                  activeTarget === "cap5" ? "active" : ""
+                }`}
+                onClick={() => handleActivateMoveable("cap5")}
+                style={{
+                  width: "220px",
+                  height: "120px",
+                  position: "absolute",
+                  left: 0,
+                  bottom: 50,
+                }}
+              >
+                <img
+                  src={cap5}
+                  alt="cap5"
+                  style={{ width: "100%", height: "100%" }}
+                  className="imageeee"
+                />
+              </div>
+            )}
+            {selectedHat === "hat6" && (
+              <div
+                ref={targetRefs.cap6}
+                className={`child-container ${
+                  activeTarget === "cap6" ? "active" : ""
+                }`}
+                onClick={() => handleActivateMoveable("cap6")}
+                style={{
+                  width: "220px",
+                  height: "120px",
+                  position: "absolute",
+                  right: 0,
+                  bottom: 50,
+                }}
+              >
+                <img
+                  src={cap6}
+                  alt="cap6"
+                  style={{ width: "100%", height: "100%" }}
+                  className="imageeee"
+                />
+              </div>
+            )}
+          </div>
+        </div>
 
-      <div className="icons">
-        <a href="https://t.me/MAGA_HAT" target="_blank">
-          <FaTelegramPlane size={22} color="white" />
-        </a>
-        <a href="http://X.com/MagaHAT_ETH" target="_blank">
-          <FaXTwitter size={22} color="white" />
-        </a>
-        <a href="https://maga-hat.vip/" target="_blank">
-          <TfiWorld size={22} color="white" />
-        </a>
+        <div className="btncrd">
+          {buttonLabel === "Upload Image" ? (
+            <label className="img">
+              {buttonLabel}
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handleImageUpload}
+                style={{ display: "none" }}
+              />
+            </label>
+          ) : (
+            <button onClick={handleSaveImage} className="img">
+              {buttonLabel}
+            </button>
+          )}
+        </div>
+
+        <div className="icons">
+          <a href="https://t.me/MAGA_HAT" target="_blank">
+            <FaTelegramPlane size={22} color="white" />
+          </a>
+          <a href="http://X.com/MagaHAT_ETH" target="_blank">
+            <FaXTwitter size={22} color="white" />
+          </a>
+          <a href="https://maga-hat.vip/" target="_blank">
+            <TfiWorld size={22} color="white" />
+          </a>
+        </div>
+        <p className="copyright">PFP MAKER - POWERED BY $MAGA</p>
       </div>
-      <p className="copyright">PFP MAKER - POWERED BY $MAGA</p>
     </div>
   );
 }
