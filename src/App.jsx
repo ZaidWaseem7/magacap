@@ -1,12 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import { IoCloseCircleSharp } from "react-icons/io5";
-import cap from "./assets/cap.png";
-import cap1 from "./assets/cap1.png";
-import cap3 from "./assets/PngItem_1077178 (1) 1.png";
-import cap4 from "./assets/MAGA HAT FNAL.png";
-import cap5 from "./assets/WhatsApp Image 2024-09-01 at 20.11.14_dfc27534 2.png";
-import cap6 from "./assets/WhatsApp Image 2024-09-01 at 20.11.18_f559c184.jpg";
+import cap1 from "./assets/cap5555.png";
+import cap2 from "./assets/cap1.png";
+import cap3 from "./assets/MAGA HAT FNAL.png";
+import cap4 from "./assets/PngItem_1077178 (1) 1.png";
+import cap5 from "./assets/cap.png";
+import cap6 from "./assets/1 (3).png";
+
+import cap7 from "./assets/WhatsApp Image 2024-09-01 at 20.11.14_dfc27534 2.png";
+import cap8 from "./assets/WhatsApp Image 2024-09-01 at 20.11.18_f559c184.jpg";
 import video from "./assets/flag.mp4";
 import Moveable from "moveable";
 import html2canvas from "html2canvas";
@@ -19,9 +22,9 @@ function App() {
   const [buttonLabel, setButtonLabel] = useState("Upload Image");
   const [activeTarget, setActiveTarget] = useState(null);
   const [selectedHat, setSelectedHat] = useState({
-    cap1to4: null,
-    cap5: false,
-    cap6: false,
+    cap1to6: null,
+    cap7: false,
+    cap8: false,
   });
   const moveableRef = useRef(null);
   const containerRef = useRef(null);
@@ -32,6 +35,8 @@ function App() {
     cap4: useRef(null),
     cap5: useRef(null),
     cap6: useRef(null),
+    cap7: useRef(null),
+    cap8: useRef(null),
   };
 
   useEffect(() => {
@@ -126,8 +131,8 @@ function App() {
   };
 
   const handleActivatecap = (key) => {
-    if (["hat1", "hat2", "hat3", "hat4"].includes(key)) {
-      setSelectedHat((prevState) => ({ ...prevState, cap1to4: key }));
+    if (["hat1", "hat2", "hat3", "hat4", "hat5", "hat6"].includes(key)) {
+      setSelectedHat((prevState) => ({ ...prevState, cap1to6: key }));
     } else {
       setSelectedHat((prevState) => ({ ...prevState, [key]: !prevState[key] }));
     }
@@ -150,229 +155,297 @@ function App() {
           <span className="magaa2">MAKE AMERICA GREAT AGAIN</span>
         </div>
         <span className="selecthat">Select</span>
-        <div className="hatboxes">
-          <div className="hat1">
-            <img
-              src={cap}
-              alt="cap"
-              style={{ width: "70%", height: "98%" }}
-              onClick={() => handleActivatecap("hat1")}
-            />
+        <div className="piccontainer">
+          <div className="hatboxes1">
+            <div className="hat1">
+              <img
+                src={cap1}
+                alt="cap6"
+                style={{ width: "90%", height: "130%" }}
+                onClick={() => handleActivatecap("hat1")}
+              />
+            </div>
+            <div className="hat1">
+              <img
+                src={cap2}
+                alt="cap"
+                style={{ width: "70%", height: "98%" }}
+                onClick={() => handleActivatecap("hat2")}
+              />
+            </div>
+            <div className="hat1">
+              <img
+                src={cap3}
+                alt="cap1"
+                style={{ width: "100%", height: "150%" }}
+                onClick={() => handleActivatecap("hat3")}
+              />
+            </div>
           </div>
-          <div className="hat2">
-            <img
-              src={cap1}
-              alt="cap1"
-              style={{ width: "70%", height: "98%" }}
-              onClick={() => handleActivatecap("hat2")}
-            />
+          <div className="hatboxes1">
+            <div className="hat2">
+              <img
+                src={cap4}
+                alt="cap3"
+                style={{ width: "80%", height: "90%" }}
+                onClick={() => handleActivatecap("hat4")}
+              />
+            </div>
+            <div className="hat2">
+              <img
+                src={cap5}
+                alt="cap4"
+                style={{ width: "80%", height: "90%" }}
+                onClick={() => handleActivatecap("hat5")}
+              />
+            </div>
+            <div className="hat2">
+              <img
+                src={cap6}
+                alt="cap5"
+                style={{ width: "80%", height: "80%" }}
+                onClick={() => handleActivatecap("hat6")}
+              />
+            </div>
           </div>
-        </div>
-        <div className="hatboxes">
-          <div className="hat3">
-            <img
-              src={cap3}
-              alt="cap3"
-              style={{ width: "90%", height: "98%" }}
-              onClick={() => handleActivatecap("hat3")}
-            />
+          <div className="hatboxe2">
+            <div className="hat3">
+              <img
+                src={cap7}
+                alt="cap7"
+                style={{ width: "90%", height: "95%" }}
+                onClick={() => handleActivatecap("cap7")}
+              />
+            </div>
+            <div className="hat3">
+              <img
+                src={cap8}
+                alt="cap8"
+                style={{ width: "90%", height: "95%" }}
+                onClick={() => handleActivatecap("cap8")}
+              />
+            </div>
           </div>
-          <div className="hat4">
-            <img
-              src={cap4}
-              alt="cap4"
-              style={{ width: "100%", height: "150%" }}
-              onClick={() => handleActivatecap("hat4")}
-            />
-          </div>
-        </div>
-        <div className="hatboxes">
-          <div className="hat3">
-            <img
-              src={cap5}
-              alt="cap5"
-              style={{ width: "90%", height: "95%" }}
-              onClick={() => handleActivatecap("cap5")}
-            />
-          </div>
-          <div className="hat4">
-            <img
-              src={cap6}
-              alt="cap6"
-              style={{ width: "90%", height: "95%" }}
-              onClick={() => handleActivatecap("cap6")}
-            />
-          </div>
-        </div>
-        <div
-          className={`input ${
-            !image ? "placeholder-border" : "image-uploaded"
-          }`}
-        >
-          <div
-            className="moveable-container"
-            ref={containerRef}
-            style={{ position: "relative" }}
-          >
-            {image && (
-              <>
-                <div onClick={handleRemoveImage} className="close-icon">
-                  <IoCloseCircleSharp size={40} className="close" />
-                </div>
-                <img src={image} alt="Uploaded Preview" className="imagecccc" />
-              </>
-            )}
-            {selectedHat.cap1to4 === "hat1" && (
-              <div
-                ref={targetRefs.cap}
-                className={`child-container ${
-                  activeTarget === "cap" ? "active" : ""
-                }`}
-                onClick={() => handleActivateMoveable("cap")}
-                style={{
-                  width: "120px",
-                  height: "120px",
-                  position: "absolute",
-                  left: 0,
-                  bottom: 50,
-                }}
-              >
-                <img
-                  src={cap}
-                  alt="cap"
-                  style={{ width: "100%", height: "100%" }}
-                  className="imageeee"
-                />
-              </div>
-            )}
-            {selectedHat.cap1to4 === "hat2" && (
-              <div
-                ref={targetRefs.cap1}
-                className={`child-container ${
-                  activeTarget === "cap1" ? "active" : ""
-                }`}
-                onClick={() => handleActivateMoveable("cap1")}
-                style={{
-                  width: "120px",
-                  height: "120px",
-                  position: "absolute",
-                  right: 0,
-                  bottom: 50,
-                }}
-              >
-                <img
-                  src={cap1}
-                  alt="cap1"
-                  style={{ width: "100%", height: "100%" }}
-                  className="imageeee"
-                />
-              </div>
-            )}
-            {selectedHat.cap1to4 === "hat3" && (
-              <div
-                ref={targetRefs.cap3}
-                className={`child-container ${
-                  activeTarget === "cap3" ? "active" : ""
-                }`}
-                onClick={() => handleActivateMoveable("cap3")}
-                style={{
-                  width: "240px",
-                  height: "140px",
-                  position: "absolute",
-                  left: 0,
-                  bottom: 50,
-                }}
-              >
-                <img
-                  src={cap3}
-                  alt="cap3"
-                  style={{ width: "100%", height: "100%" }}
-                  className="imageeee"
-                />
-              </div>
-            )}
-            {selectedHat.cap1to4 === "hat4" && (
-              <div
-                ref={targetRefs.cap4}
-                className={`child-container ${
-                  activeTarget === "cap4" ? "active" : ""
-                }`}
-                onClick={() => handleActivateMoveable("cap4")}
-                style={{
-                  width: "200px",
-                  height: "160px",
-                  position: "absolute",
-                  right: 0,
-                  bottom: 50,
-                }}
-              >
-                <img
-                  src={cap4}
-                  alt="cap4"
-                  style={{ width: "100%", height: "100%" }}
-                  className="imageeee"
-                />
-              </div>
-            )}
-            {selectedHat.cap5 && (
-              <div
-                ref={targetRefs.cap5}
-                className={`child-container ${
-                  activeTarget === "cap5" ? "active" : ""
-                }`}
-                onClick={() => handleActivateMoveable("cap5")}
-                style={{
-                  width: "200px",
-                  height: "120px",
-                  position: "absolute",
-                  left: 7,
-                  bottom: -60,
-                }}
-              >
-                <img
-                  src={cap5}
-                  alt="cap5"
-                  style={{ width: "100%", height: "100%" }}
-                  className="imageeee"
-                />
-                <IoCloseCircleSharp
-                  className="close-button"
-                  size={20}
-                  onClick={() => handleCloseCap("cap5")}
-                />
-              </div>
-            )}
-            {selectedHat.cap6 && (
-              <div
-                ref={targetRefs.cap6}
-                className={`child-container ${
-                  activeTarget === "cap6" ? "active" : ""
-                }`}
-                onClick={() => handleActivateMoveable("cap6")}
-                style={{
-                  width: "200px",
-                  height: "120px",
-                  position: "absolute",
-                  right: 7,
-                  bottom: -10,
-                }}
-              >
-                <img
-                  src={cap6}
-                  alt="cap6"
-                  style={{ width: "100%", height: "100%" }}
-                  className="imageeee"
-                />
-                <IoCloseCircleSharp
-                  className="close-button"
-                  size={20}
-                  onClick={() => handleCloseCap("cap6")}
-                />
-              </div>
-            )}
-          </div>
-        </div>
 
+          <div
+            className={`input ${
+              !image ? "placeholder-border" : "image-uploaded"
+            }`}
+          >
+            <div
+              className="moveable-container"
+              ref={containerRef}
+              style={{ position: "relative" }}
+            >
+              {image && (
+                <>
+                  <div onClick={handleRemoveImage} className="close-icon">
+                    <IoCloseCircleSharp size={40} className="close" />
+                  </div>
+                  <img
+                    src={image}
+                    alt="Uploaded Preview"
+                    className="imagecccc"
+                  />
+                </>
+              )}
+              {selectedHat.cap1to6 === "hat1" && (
+                <div
+                  ref={targetRefs.cap}
+                  className={`child-container ${
+                    activeTarget === "cap" ? "active" : ""
+                  }`}
+                  onClick={() => handleActivateMoveable("cap")}
+                  style={{
+                    width: "190px",
+                    height: "140px",
+                    position: "absolute",
+                    left: 0,
+                    bottom: 50,
+                  }}
+                >
+                  <img
+                    src={cap1}
+                    alt="cap1"
+                    style={{ width: "100%", height: "100%" }}
+                    className="imageeee"
+                  />
+                </div>
+              )}
+              {selectedHat.cap1to6 === "hat2" && (
+                <div
+                  ref={targetRefs.cap1}
+                  className={`child-container ${
+                    activeTarget === "cap1" ? "active" : ""
+                  }`}
+                  onClick={() => handleActivateMoveable("cap1")}
+                  style={{
+                    width: "180px",
+                    height: "140px",
+                    position: "absolute",
+                    right: 0,
+                    bottom: 50,
+                  }}
+                >
+                  <img
+                    src={cap2}
+                    alt="cap2"
+                    style={{ width: "100%", height: "100%" }}
+                    className="imageeee"
+                  />
+                </div>
+              )}
+              {selectedHat.cap1to6 === "hat3" && (
+                <div
+                  ref={targetRefs.cap3}
+                  className={`child-container ${
+                    activeTarget === "cap3" ? "active" : ""
+                  }`}
+                  onClick={() => handleActivateMoveable("cap3")}
+                  style={{
+                    width: "240px",
+                    height: "140px",
+                    position: "absolute",
+                    left: 0,
+                    bottom: 50,
+                  }}
+                >
+                  <img
+                    src={cap3}
+                    alt="cap3"
+                    style={{ width: "100%", height: "100%" }}
+                    className="imageeee"
+                  />
+                </div>
+              )}
+              {selectedHat.cap1to6 === "hat4" && (
+                <div
+                  ref={targetRefs.cap4}
+                  className={`child-container ${
+                    activeTarget === "cap4" ? "active" : ""
+                  }`}
+                  onClick={() => handleActivateMoveable("cap4")}
+                  style={{
+                    width: "260px",
+                    height: "160px",
+                    position: "absolute",
+                    right: 0,
+                    bottom: 50,
+                  }}
+                >
+                  <img
+                    src={cap4}
+                    alt="cap4"
+                    style={{ width: "100%", height: "100%" }}
+                    className="imageeee"
+                  />
+                </div>
+              )}
+              {selectedHat.cap1to6 === "hat5" && (
+                <div
+                  ref={targetRefs.cap5}
+                  className={`child-container ${
+                    activeTarget === "cap5" ? "active" : ""
+                  }`}
+                  onClick={() => handleActivateMoveable("cap5")}
+                  style={{
+                    width: "200px",
+                    height: "160px",
+                    position: "absolute",
+                    right: 0,
+                    bottom: 50,
+                  }}
+                >
+                  <img
+                    src={cap5}
+                    alt="cap5"
+                    style={{ width: "100%", height: "100%" }}
+                    className="imageeee"
+                  />
+                </div>
+              )}
+              {selectedHat.cap1to6 === "hat6" && (
+                <div
+                  ref={targetRefs.cap6}
+                  className={`child-container ${
+                    activeTarget === "cap6" ? "active" : ""
+                  }`}
+                  onClick={() => handleActivateMoveable("cap6")}
+                  style={{
+                    width: "300px",
+                    height: "170px",
+                    position: "absolute",
+                    right: 0,
+                    bottom: 50,
+                  }}
+                >
+                  <img
+                    src={cap6}
+                    alt="cap6"
+                    style={{ width: "100%", height: "100%" }}
+                    className="imageeee"
+                  />
+                </div>
+              )}
+              {selectedHat.cap7 && (
+                <div
+                  ref={targetRefs.cap7}
+                  className={`child-container ${
+                    activeTarget === "cap7" ? "active" : ""
+                  }`}
+                  onClick={() => handleActivateMoveable("cap7")}
+                  style={{
+                    width: "200px",
+                    height: "120px",
+                    position: "absolute",
+                    left: 7,
+                    bottom: -60,
+                  }}
+                >
+                  <img
+                    src={cap7}
+                    alt="cap7"
+                    style={{ width: "100%", height: "100%" }}
+                    className="imageeee"
+                  />
+                  <IoCloseCircleSharp
+                    className="close-button"
+                    size={20}
+                    onClick={() => handleCloseCap("cap7")}
+                  />
+                </div>
+              )}
+              {selectedHat.cap8 && (
+                <div
+                  ref={targetRefs.cap8}
+                  className={`child-container ${
+                    activeTarget === "cap8" ? "active" : ""
+                  }`}
+                  onClick={() => handleActivateMoveable("cap8")}
+                  style={{
+                    width: "200px",
+                    height: "120px",
+                    position: "absolute",
+                    right: 7,
+                    bottom: -10,
+                  }}
+                >
+                  <img
+                    src={cap8}
+                    alt="cap8"
+                    style={{ width: "100%", height: "100%" }}
+                    className="imageeee"
+                  />
+                  <IoCloseCircleSharp
+                    className="close-button"
+                    size={20}
+                    onClick={() => handleCloseCap("cap8")}
+                  />
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
         <div className="btncrd">
           {buttonLabel === "Upload Image" ? (
             <label className="img">

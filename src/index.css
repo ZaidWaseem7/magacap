@@ -73,10 +73,11 @@ button:focus-visible {
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 2px;
   background-color: rgba(39, 30, 30, 0.87);
-
 }
+
+
 
 ::-webkit-scrollbar-thumb {
   background-color: blue;
