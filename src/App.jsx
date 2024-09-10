@@ -257,8 +257,8 @@ function App() {
                   }`}
                   onClick={() => handleActivateMoveable("cap")}
                   style={{
-                    width: "190px",
-                    height: "140px",
+                    width: "auto",
+                    height: "140px", // Adjust this for the cap height
                     position: "absolute",
                     left: 0,
                     bottom: 50,
@@ -267,11 +267,12 @@ function App() {
                   <img
                     src={cap1}
                     alt="cap1"
-                    style={{ width: "100%", height: "100%" }}
+                    style={{ width: "100%", height: "auto" }} // Maintain aspect ratio
                     className="imageeee"
                   />
                 </div>
               )}
+
               {selectedHat.cap1to6 === "hat2" && (
                 <div
                   ref={targetRefs.cap1}
@@ -303,8 +304,8 @@ function App() {
                   }`}
                   onClick={() => handleActivateMoveable("cap3")}
                   style={{
-                    width: "240px",
-                    height: "140px",
+                    width: "auto",
+                    height: "140px", // Adjust this for the cap height
                     position: "absolute",
                     left: 0,
                     bottom: 50,
@@ -313,11 +314,12 @@ function App() {
                   <img
                     src={cap3}
                     alt="cap3"
-                    style={{ width: "100%", height: "100%" }}
+                    style={{ width: "100%", height: "auto" }} // Maintain aspect ratio
                     className="imageeee"
                   />
                 </div>
               )}
+
               {selectedHat.cap1to6 === "hat4" && (
                 <div
                   ref={targetRefs.cap4}
