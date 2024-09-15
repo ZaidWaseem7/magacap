@@ -10,7 +10,7 @@ import cap6 from "./assets/1 (3).png";
 
 import cap7 from "./assets/WhatsApp Image 2024-09-01 at 20.11.14_dfc27534 2.png";
 import cap8 from "./assets/WhatsApp Image 2024-09-01 at 20.11.18_f559c184.jpg";
-import video from "./assets/flag.mp4";
+import video from "./assets/americaa.mp4";
 import Moveable from "moveable";
 import html2canvas from "html2canvas";
 import { FaXTwitter } from "react-icons/fa6";

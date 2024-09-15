@@ -33,7 +33,7 @@ body {
   left: 0;
   width: 99.5vw;
   height: 100%;
-  background-color: rgba(11, 11, 51, 0.9);
+  background-color: rgba(11, 11, 51, 0.8);
 
   z-index: -1;
 }
