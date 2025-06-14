@@ -146,7 +146,7 @@ function App() {
     <div className="app-container">
       <video className="background-video" autoPlay muted loop>
         <source src={video} type="video/mp4" />
-        Your browser does not support the video tag.
+        Your browser does not support the video tag.Why?
       </video>
       <div className="blue-overlay"></div>
       <div className={`card ${image ? "image-uploaded" : ""}`} id="page1">
